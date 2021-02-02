@@ -20,7 +20,6 @@ public class LightDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
         if (other.CompareTag("Player"))
         {
             Debug.Log("player");
@@ -34,11 +33,12 @@ public class LightDetection : MonoBehaviour
 
             Debug.DrawRay(transform.parent.position, dirToTarget * dstToTarget, Color.blue, 5);
 
-            var output = JsonUtility.ToJson(Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget, layerMask), true);
-            Debug.Log(output);
+            RaycastHit2D hit = Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget);
 
-            if (Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget, layerMask))
-                Debug.Log("caught");
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Caught");
+            }
         }
     }
 }
