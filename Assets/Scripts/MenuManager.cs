@@ -8,6 +8,16 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneBuildIndex);
     }
     
+    public void LoadSceneByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
     public void QuitGame()
     {
         #if UNITY_EDITOR

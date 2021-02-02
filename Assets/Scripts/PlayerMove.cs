@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -6,6 +7,8 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D my_rigidbody;
     private Vector3 change;
     private Animator anim;
+
+    public bool canMove = true;
     
     // Start is called before the first frame update
     void Start()
@@ -17,22 +20,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");
+        if (canMove)
+        {
+            change = Vector3.zero;
+            change.x = Input.GetAxisRaw("Horizontal");
+            change.y = Input.GetAxisRaw("Vertical");
 
+            if (Input.GetButtonDown("Jump"))
+                anim.SetTrigger("Attack");
+        }
+    }
+
+
+    private void FixedUpdate()
+    {
         if (change != Vector3.zero)
         {
             MoveCharacter();
+            change = Vector3.zero;
         }
-
-        if (Input.GetButtonDown("Jump"))
-            anim.SetTrigger("Attack");
     }
 
     void MoveCharacter()
     {
-        my_rigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        my_rigidbody.MovePosition(transform.position + change * speed * Time.fixedDeltaTime);
 
         if (change.x < 0f)
             transform.rotation = Quaternion.Euler(0, 0, 180);
