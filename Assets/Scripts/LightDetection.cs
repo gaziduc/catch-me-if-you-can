@@ -1,42 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class LightDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Lose lose;
+    
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        lose = GameObject.Find("LoseManager").GetComponent<Lose>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("player");
-            Transform target = other.transform;
+            HitTarget(other);
+        }
+    }
+    
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            HitTarget(other);
+        }
+    }
 
-            Vector2 dirToTarget = (target.position - transform.parent.position).normalized;
-            float dstToTarget = Vector2.Distance(transform.parent.position, target.position);
+    void HitTarget(Collider2D other)
+    {
+        Transform target = other.transform;
 
-            Debug.Log(dstToTarget);
-            Debug.Log(dirToTarget);
+        Vector2 dirToTarget = (target.position - transform.parent.position).normalized;
+        float dstToTarget = Vector2.Distance(transform.parent.position, target.position);
+            
+        // Debug.DrawRay(transform.parent.position, dirToTarget * dstToTarget, Color.blue, 5);
 
-            Debug.DrawRay(transform.parent.position, dirToTarget * dstToTarget, Color.blue, 5);
+        RaycastHit2D hit = Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget);
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget);
-
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                Debug.Log("Caught");
-            }
+        if (hit.collider.gameObject.CompareTag("Player"))
+        {
+            hit.collider.gameObject.GetComponent<PlayerMove>().canMove = false;
+            lose.Loose();
         }
     }
 }
