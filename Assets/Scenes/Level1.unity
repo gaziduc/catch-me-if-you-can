@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 278054697}
   - component: {fileID: 278054699}
   - component: {fileID: 278054698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: survivor-move_flashlight_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
