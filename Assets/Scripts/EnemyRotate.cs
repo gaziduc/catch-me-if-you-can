@@ -9,7 +9,7 @@ public class EnemyRotate : MonoBehaviour
     private float initialRotationZ;
     public float minRotationZ;
     public float maxRotationZ;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +21,8 @@ public class EnemyRotate : MonoBehaviour
     {
         if (PauseMenu.isPaused)
             return;
-        if (isGoingLeft)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z - speed);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + speed);
-        }
+        
+        transform.Rotate(new Vector3(0, 0, isGoingLeft ? -speed : speed));
 
         if (transform.rotation.eulerAngles.z < initialRotationZ + minRotationZ)
             isGoingLeft = false;
