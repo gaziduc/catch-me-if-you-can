@@ -32,7 +32,7 @@ public class LightDetection : MonoBehaviour
         Vector2 dirToTarget = (target.position - transform.parent.position).normalized;
         float dstToTarget = Vector2.Distance(transform.parent.position, target.position);
             
-        // Debug.DrawRay(transform.parent.position, dirToTarget * dstToTarget, Color.blue, 5);
+        //Debug.DrawRay(transform.parent.position, dirToTarget * dstToTarget, Color.blue, 5);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.parent.position, dirToTarget, dstToTarget);
 
