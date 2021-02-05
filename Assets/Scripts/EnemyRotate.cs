@@ -22,7 +22,7 @@ public class EnemyRotate : MonoBehaviour
         if (PauseMenu.isPaused)
             return;
         
-        transform.Rotate(new Vector3(0, 0, isGoingLeft ? -speed : speed));
+        transform.Rotate(new Vector3(0, 0, isGoingLeft ? -speed * Time.deltaTime : speed * Time.deltaTime));
 
         if (transform.rotation.eulerAngles.z < initialRotationZ + minRotationZ)
             isGoingLeft = false;
