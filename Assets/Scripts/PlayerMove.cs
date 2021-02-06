@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
 
     void MoveCharacter()
     {
-        my_rigidbody.MovePosition(transform.position + change * speed * Time.fixedDeltaTime);
+        my_rigidbody.MovePosition(transform.position + change.normalized * speed * Time.fixedDeltaTime);
 
         if (change.x < 0f)
             transform.rotation = Quaternion.Euler(0, 0, 180);

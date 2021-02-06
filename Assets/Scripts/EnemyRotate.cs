@@ -5,15 +5,18 @@ using UnityEngine;
 public class EnemyRotate : MonoBehaviour
 {
     public float speed;
-    private bool isGoingLeft = true;
-    private float initialRotationZ;
+    public bool isGoingLeft = true;
     public float minRotationZ;
     public float maxRotationZ;
+    public bool hasBounds = true;
+    
+    private float initialRotationZ;
 
     // Start is called before the first frame update
     void Start()
     {
-        initialRotationZ = transform.rotation.eulerAngles.z;
+        if (hasBounds)
+            initialRotationZ = transform.rotation.eulerAngles.z;
     }
 
     // Update is called once per frame
@@ -24,9 +27,12 @@ public class EnemyRotate : MonoBehaviour
         
         transform.Rotate(new Vector3(0, 0, isGoingLeft ? -speed * Time.deltaTime : speed * Time.deltaTime));
 
-        if (transform.rotation.eulerAngles.z < initialRotationZ + minRotationZ)
-            isGoingLeft = false;
-        else if (transform.rotation.eulerAngles.z > initialRotationZ + maxRotationZ)
-            isGoingLeft = true;
+        if (hasBounds)
+        {
+            if (transform.rotation.eulerAngles.z < initialRotationZ + minRotationZ)
+                isGoingLeft = false;
+            else if (transform.rotation.eulerAngles.z > initialRotationZ + maxRotationZ)
+                isGoingLeft = true;
+        }
     }
 }
