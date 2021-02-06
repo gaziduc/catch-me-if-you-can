@@ -10,13 +10,6 @@ public class FOV : MonoBehaviour
     public LayerMask obstacleMask, detectionMask;
     public Collider2D[] targetsInRadius;
 
-    private Lose lose;
-    
-    private void Start()
-    {
-        lose = GameObject.Find("LoseManager").GetComponent<Lose>();
-    }
-
     private void Update()
     {
         FindTargets();
@@ -47,7 +40,7 @@ public class FOV : MonoBehaviour
 
                 if (hit && hit.collider.CompareTag("Player"))
                 {
-                    lose.Loose();
+                    GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
                 }
             }
         }
