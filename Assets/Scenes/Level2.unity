@@ -24431,6 +24431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 7899374771244024106, guid: a6d9d25d0d413e745b3005cc8d2b9293, type: 3}
+      propertyPath: endScreen
+      value: 
+      objectReference: {fileID: 1358903630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d9d25d0d413e745b3005cc8d2b9293, type: 3}
 --- !u!1 &1754786228
