@@ -13,6 +13,7 @@ public class Win : MonoBehaviour
         {
             endScreen.SetActive(true);
             other.gameObject.GetComponent<PlayerMove>().canMove = false;
+            Time.timeScale = 0f;
         }
     }
 }

@@ -37,7 +37,12 @@ public class PlayerMove : MonoBehaviour
         if (change != Vector3.zero)
         {
             MoveCharacter();
+            anim.SetBool("Moving", true);
             change = Vector3.zero;
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
         }
     }
 
