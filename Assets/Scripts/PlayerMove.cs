@@ -38,7 +38,6 @@ public class PlayerMove : MonoBehaviour
         {
             MoveCharacter();
             anim.SetBool("Moving", true);
-            change = Vector3.zero;
         }
         else
         {

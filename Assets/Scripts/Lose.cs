@@ -17,5 +17,6 @@ public class Lose : MonoBehaviour
     {
         losePanel.SetActive(true);
         player.canMove = false;
+        player.speed = 0;
     }
 }
