@@ -19,6 +19,7 @@ public class AllEnemies : MonoBehaviour
         foreach (var enemy in enemiesFollowingPath)
         {
             enemy.moveSpeed = moveSpeed;
+            enemy.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 }
