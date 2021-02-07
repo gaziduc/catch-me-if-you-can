@@ -10,13 +10,18 @@ public class AllEnemies : MonoBehaviour
     public int moveSpeed;
     public GameObject redSquare;
 
+    private AudioSource audio;
+    
     private void Start()
     {
         instance = this;
+        audio = GetComponent<AudioSource>();
     }
 
     public void AlertEnemies()
     {
+        audio.Play();
+        
         foreach (var enemy in enemiesFollowingPath)
         {
             enemy.moveSpeed = moveSpeed;
