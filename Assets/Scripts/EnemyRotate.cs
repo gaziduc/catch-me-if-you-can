@@ -22,9 +22,6 @@ public class EnemyRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.isPaused)
-            return;
-        
         transform.Rotate(new Vector3(0, 0, isGoingLeft ? -speed * Time.deltaTime : speed * Time.deltaTime));
 
         if (hasBounds)
