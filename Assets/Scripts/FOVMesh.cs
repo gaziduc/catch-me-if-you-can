@@ -42,7 +42,7 @@ public class FOVMesh : MonoBehaviour
             
             hit = Physics2D.Raycast(fov.transform.position, dir, fov.viewRadius, fov.obstacleMask);
             
-            if (hit.collider == null)
+            if (hit.collider == null || hit.collider.gameObject.CompareTag("BloodSplash"))
             {
                 viewVertex.Add(transform.position + dir.normalized * fov.viewRadius);
             }

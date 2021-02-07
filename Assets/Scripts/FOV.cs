@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 public class FOV : MonoBehaviour
 {
@@ -41,6 +43,12 @@ public class FOV : MonoBehaviour
                 if (hit && hit.collider.CompareTag("Player"))
                 {
                     GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
+                }
+
+                if (hit && hit.collider.CompareTag("BloodSplash"))
+                {
+                    UnityEngine.Debug.Log("Is on bloodsplash");
+                    AllEnemies.instance.AlertEnemies();
                 }
             }
         }
