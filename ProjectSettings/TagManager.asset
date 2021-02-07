@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - BloodSplash
+  - Knife
   layers:
   - Default
   - TransparentFX

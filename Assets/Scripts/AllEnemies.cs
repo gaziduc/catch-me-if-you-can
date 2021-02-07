@@ -8,6 +8,7 @@ public class AllEnemies : MonoBehaviour
     public static AllEnemies instance = null;
     public FollowThePath[] enemiesFollowingPath;
     public int moveSpeed;
+    public GameObject redSquare;
 
     private void Start()
     {
@@ -21,5 +22,7 @@ public class AllEnemies : MonoBehaviour
             enemy.moveSpeed = moveSpeed;
             enemy.transform.GetChild(1).gameObject.SetActive(true);
         }
+        
+        redSquare.SetActive(true);
     }
 }

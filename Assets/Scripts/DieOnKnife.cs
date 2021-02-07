@@ -14,28 +14,30 @@ public class DieOnKnife : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Knife"))
         {
             Debug.Log("Stay: En collision avec l'ennemi");
-            var animation = other.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
             
             if (animation.IsName("PlayerAttackKnife"))
             {
                 SwitchState();
+                other.transform.parent.GetComponent<Inventory>().AddKill();
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Knife"))
         {
             Debug.Log("Enter: En collision avec l'ennemi");
-            var animation = other.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
             
             if (animation.IsName("PlayerAttackKnife"))
             {
                 SwitchState();
+                other.transform.parent.GetComponent<Inventory>().AddKill();
             }
         }
     }

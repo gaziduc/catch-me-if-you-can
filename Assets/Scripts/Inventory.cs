@@ -6,17 +6,27 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public int numTVs;
+    public int numKills;
+    
     private Text numTVsText;
+    private Text numKillsText;
 
     // Start is called before the first frame update
     void Start()
     {
         numTVsText = GameObject.Find("numTVsText").GetComponent<Text>();
+        numKillsText = GameObject.Find("numKillsText").GetComponent<Text>();
     }
 
     public void AddNumTVs()
     {
         numTVs++;
         numTVsText.text = numTVs.ToString();
+    }
+
+    public void AddKill()
+    {
+        numKills++;
+        numKillsText.text = numKills.ToString();
     }
 }
