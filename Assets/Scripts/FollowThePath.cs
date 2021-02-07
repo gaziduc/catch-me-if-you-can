@@ -27,8 +27,9 @@ public class FollowThePath : MonoBehaviour {
     {
         if (isRotating)
         {
-            transform.Rotate(new Vector3(0, 0, -3));
-            angleToRotateRemaining -= 3f;
+            float angle = 200 * Time.deltaTime;
+            transform.Rotate(new Vector3(0, 0, -angle));
+            angleToRotateRemaining -= angle;
 
             if (angleToRotateRemaining <= 0f)
                 isRotating = false;

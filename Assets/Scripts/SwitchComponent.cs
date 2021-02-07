@@ -20,7 +20,7 @@ public class SwitchComponent : MonoBehaviour
         spriteRenderer.sprite = newSprite;
     }
 
-    private void IsPlayerCutting(Collider2D other)
+    private void PlayerCut(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -41,12 +41,12 @@ public class SwitchComponent : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        IsPlayerCutting(other);
+        PlayerCut(other);
         
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        IsPlayerCutting(other);
+        PlayerCut(other);
     }
 }
