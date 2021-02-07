@@ -32,7 +32,10 @@ public class FollowThePath : MonoBehaviour {
             angleToRotateRemaining -= angle;
 
             if (angleToRotateRemaining <= 0f)
+            {
                 isRotating = false;
+                transform.Rotate(new Vector3(0, 0, -angleToRotateRemaining));
+            }
 
             return;
         }
