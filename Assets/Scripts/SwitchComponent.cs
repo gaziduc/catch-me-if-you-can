@@ -24,15 +24,15 @@ public class SwitchComponent : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (HasToCut)
+            if (!HasToCut)
             {
-                var animation = other.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-                if (animation.IsName("PlayerAttackKnife") || animation.IsName("PlayerAttackKnife2"))
-                {
-                    SwitchState();
-                }
+                SwitchState();
+                return;
             }
-            else
+
+            var animation = other.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            
+            if (animation.IsName("PlayerAttackKnife"))
             {
                 SwitchState();
             }
