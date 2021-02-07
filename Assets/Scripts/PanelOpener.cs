@@ -2,14 +2,29 @@ using UnityEngine;
 
 public class PanelOpener : MonoBehaviour
 {
-    public GameObject panel;
+    public GameObject settingsPanel;
+    public GameObject helpPanel;
 
 
-    public void OpenPanel()
+    public void OpenSettingsPanel()
     {
-        if (panel != null)
+        if (settingsPanel != null)
         {
-            Animator anim = panel.GetComponent<Animator>();
+            Animator anim = settingsPanel.GetComponent<Animator>();
+
+            if (anim != null)
+            {
+                bool isOpen = anim.GetBool("Open");
+                anim.SetBool("Open", !isOpen);
+            }
+        }
+    }
+
+    public void OpenHelpPanel()
+    {
+        if (helpPanel != null)
+        {
+            Animator anim = helpPanel.GetComponent<Animator>();
 
             if (anim != null)
             {
