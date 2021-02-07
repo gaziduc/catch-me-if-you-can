@@ -49,7 +49,15 @@ public class PlayerMove : MonoBehaviour
     {
         my_rigidbody.MovePosition(transform.position + change.normalized * speed * Time.fixedDeltaTime);
 
-        if (change.x < 0f)
+        if (change.x < 0f && change.y < 0f)
+            transform.rotation = Quaternion.Euler(0, 0, 225);
+        else if (change.x < 0f && change.y > 0f)
+            transform.rotation = Quaternion.Euler(0, 0, 135);
+        else if (change.x > 0f && change.y < 0f)
+            transform.rotation = Quaternion.Euler(0, 0, 315);
+        else if (change.x > 0f && change.y > 0f)
+            transform.rotation = Quaternion.Euler(0, 0, 45);
+        else if (change.x < 0f)
             transform.rotation = Quaternion.Euler(0, 0, 180);
         else if (change.x > 0f)
             transform.rotation = Quaternion.Euler(0, 0, 0);
