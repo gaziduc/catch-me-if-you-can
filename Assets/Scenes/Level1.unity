@@ -21153,6 +21153,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3953801450863836656, guid: 18762b87afe5dd14f83c92757ced02b8, type: 3}
+      propertyPath: smoothTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3953801450863836660, guid: 18762b87afe5dd14f83c92757ced02b8, type: 3}
       propertyPath: m_RootOrder
       value: 4

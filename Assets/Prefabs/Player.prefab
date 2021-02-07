@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minPosition: {x: 11.75, y: -22}
   maxPosition: {x: 18.25, y: -4}
+  smoothTime: 0.2
 --- !u!114 &3953801450863836657
 MonoBehaviour:
   m_ObjectHideFlags: 0
