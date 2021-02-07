@@ -9,18 +9,23 @@ public class AllEnemies : MonoBehaviour
     public FollowThePath[] enemiesFollowingPath;
     public int moveSpeed;
     public GameObject redSquare;
+    public bool isInAlert;
 
-    private AudioSource audio;
+    private AudioSource spottedMusic;
+    public AudioSource music;
     
     private void Start()
     {
         instance = this;
-        audio = GetComponent<AudioSource>();
+
+        isInAlert = false;
+        spottedMusic = GetComponent<AudioSource>();
     }
 
     public void AlertEnemies()
     {
-        audio.Play();
+        music.Stop();
+        spottedMusic.Play();
         
         foreach (var enemy in enemiesFollowingPath)
         {
@@ -29,5 +34,7 @@ public class AllEnemies : MonoBehaviour
         }
         
         redSquare.SetActive(true);
+
+        isInAlert = true;
     }
 }

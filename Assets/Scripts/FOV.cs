@@ -48,7 +48,8 @@ public class FOV : MonoBehaviour
                     }
                     else if (hit.collider.CompareTag("BloodSplash"))
                     {
-                        AllEnemies.instance.AlertEnemies();
+                        if (!AllEnemies.instance.isInAlert)
+                            AllEnemies.instance.AlertEnemies();
                     }
                 }
             }
