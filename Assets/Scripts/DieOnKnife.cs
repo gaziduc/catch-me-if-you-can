@@ -16,7 +16,6 @@ public class DieOnKnife : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Knife"))
         {
-            Debug.Log("Stay: En collision avec l'ennemi");
             var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
             
             if (animation.IsName("PlayerAttackKnife"))
@@ -31,7 +30,6 @@ public class DieOnKnife : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Knife"))
         {
-            Debug.Log("Enter: En collision avec l'ennemi");
             var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
             
             if (animation.IsName("PlayerAttackKnife"))
