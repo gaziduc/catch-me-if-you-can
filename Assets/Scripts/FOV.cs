@@ -40,15 +40,16 @@ public class FOV : MonoBehaviour
 
                 var hit = Physics2D.Raycast(transform.position, dirTarget, distanceTarget, obstacleMask);
 
-                if (hit && hit.collider.CompareTag("Player"))
+                if (hit)
                 {
-                    GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
-                }
-
-                if (hit && hit.collider.CompareTag("BloodSplash"))
-                {
-                    UnityEngine.Debug.Log("Is on bloodsplash");
-                    AllEnemies.instance.AlertEnemies();
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
+                    }
+                    else if (hit.collider.CompareTag("BloodSplash"))
+                    {
+                        AllEnemies.instance.AlertEnemies();
+                    }
                 }
             }
         }

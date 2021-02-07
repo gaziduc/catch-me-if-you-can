@@ -11,6 +11,7 @@ public class FOVMesh : MonoBehaviour
     [HideInInspector] public Vector3[] vertices;
     [HideInInspector] public int[] triangles;
     [HideInInspector] public int stepCount;
+    public LayerMask obstacleMask;
 
 
     // Use this for initialization
@@ -40,9 +41,9 @@ public class FOVMesh : MonoBehaviour
             float angle = fov.transform.eulerAngles.y - fov.viewAngle / 2 + stepAngle * i;
             Vector3 dir = fov.DirFromAngle(angle, false);
             
-            hit = Physics2D.Raycast(fov.transform.position, dir, fov.viewRadius, fov.obstacleMask);
+            hit = Physics2D.Raycast(fov.transform.position, dir, fov.viewRadius, obstacleMask);
             
-            if (hit.collider == null || hit.collider.gameObject.CompareTag("BloodSplash"))
+            if (hit.collider == null)
             {
                 viewVertex.Add(transform.position + dir.normalized * fov.viewRadius);
             }

@@ -155,6 +155,9 @@ MonoBehaviour:
   vertices: []
   triangles: 
   stepCount: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 51
 --- !u!114 &761744000307048696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,14 +170,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3aaf40133d28141b1ea80847f7eff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 6
-  viewAngle: 70
+  viewRadius: 18
+  viewAngle: 50
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   detectionMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   targetsInRadius: []
 --- !u!33 &761744000307048697
 MeshFilter:

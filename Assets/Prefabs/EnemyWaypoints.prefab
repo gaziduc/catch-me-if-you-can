@@ -226,6 +226,9 @@ MonoBehaviour:
   vertices: []
   triangles: 
   stepCount: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 51
 --- !u!114 &3089255384114924972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,10 +245,10 @@ MonoBehaviour:
   viewAngle: 55
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   detectionMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   targetsInRadius: []
 --- !u!33 &3089255384114924975
 MeshFilter:
