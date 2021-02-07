@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9058118593515722360}
   - component: {fileID: 9058118593515722362}
   - component: {fileID: 9058118593515722363}
+  - component: {fileID: 1916339279}
   m_Layer: 2
   m_Name: EnemyRotating
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +161,19 @@ CircleCollider2D:
   m_Offset: {x: -0.53178614, y: -0.010852942}
   serializedVersion: 2
   m_Radius: 0.72189486
+--- !u!114 &1916339279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058118593515722356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02251bec4c404124a352d17af8a4d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instantiate: {fileID: 5752971819450347061, guid: 13a7ed078667e44cf99bde72705f4518, type: 3}
 --- !u!1 &9058118593580159014
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +224,9 @@ MonoBehaviour:
   vertices: []
   triangles: 
   stepCount: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 51
 --- !u!114 &9058118593580159019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,10 +243,10 @@ MonoBehaviour:
   viewAngle: 55
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   detectionMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 59
   targetsInRadius: []
 --- !u!33 &9058118593580159021
 MeshFilter:
