@@ -5,26 +5,26 @@ public class MenuManager : MonoBehaviour
 {
     public void LoadScene(int sceneBuildIndex)
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneBuildIndex);
+        Time.timeScale = 1f;
     }
     
     public void LoadSceneByName(string sceneName)
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1f;
     }
     
     public void LoadNextScene()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
     }
 
     public void ReloadScene()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
     
     public void QuitGame()

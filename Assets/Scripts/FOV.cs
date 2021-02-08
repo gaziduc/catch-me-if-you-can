@@ -12,7 +12,7 @@ public class FOV : MonoBehaviour
     public LayerMask obstacleMask, detectionMask;
     public Collider2D[] targetsInRadius;
 
-    private void Update()
+    private void FixedUpdate()
     {
         FindTargets();
     }
