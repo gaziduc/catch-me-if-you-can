@@ -4898,3 +4898,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 0}
+  scoreText: {fileID: 0}
