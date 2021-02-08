@@ -15,6 +15,7 @@ public class Lose : MonoBehaviour
 
     public void Loose()
     {
+        player.gameObject.GetComponent<AudioSource>().Play();
         losePanel.SetActive(true);
         player.canMove = false;
         player.speed = 0;
