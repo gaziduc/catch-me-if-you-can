@@ -5,6 +5,7 @@ public class FollowThePath : MonoBehaviour {
     
     [SerializeField] private Transform[] waypoints;
     public float moveSpeed = 2f;
+    public float rotationSpeed = 200f;
     
     private int waypointIndex = 0;
 
@@ -27,7 +28,7 @@ public class FollowThePath : MonoBehaviour {
     {
         if (isRotating)
         {
-            float angle = 200 * Time.deltaTime;
+            float angle = rotationSpeed * Time.deltaTime;
             transform.Rotate(new Vector3(0, 0, -angle));
             angleToRotateRemaining -= angle;
 

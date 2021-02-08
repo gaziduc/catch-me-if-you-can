@@ -323,7 +323,9 @@ MonoBehaviour:
   - {fileID: 1151761222}
   - {fileID: 56294307}
   moveSpeed: 10
+  rotationSpeed: 300
   redSquare: {fileID: 1852198629}
+  isInAlert: 0
   music: {fileID: 1072968313}
 --- !u!4 &103526577
 Transform:

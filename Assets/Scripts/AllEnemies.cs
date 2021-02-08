@@ -8,6 +8,7 @@ public class AllEnemies : MonoBehaviour
     public static AllEnemies instance = null;
     public FollowThePath[] enemiesFollowingPath;
     public int moveSpeed;
+    public float rotationSpeed;
     public GameObject redSquare;
     public bool isInAlert;
 
@@ -30,6 +31,7 @@ public class AllEnemies : MonoBehaviour
         foreach (var enemy in enemiesFollowingPath)
         {
             enemy.moveSpeed = moveSpeed;
+            enemy.rotationSpeed = rotationSpeed;
             enemy.transform.GetChild(1).gameObject.SetActive(true);
         }
         
