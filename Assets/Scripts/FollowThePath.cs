@@ -1,8 +1,7 @@
-using System.Collections;
 using UnityEngine;
 
-public class FollowThePath : MonoBehaviour {
-    
+public class FollowThePath : MonoBehaviour
+{
     [SerializeField] private Transform[] waypoints;
     public float moveSpeed = 2f;
     public float rotationSpeed = 200f;
@@ -12,12 +11,6 @@ public class FollowThePath : MonoBehaviour {
     private bool isRotating = false;
     private float angleToRotate = 0f;
 
-    // Use this for initialization
-    private void Start ()
-    {
-        transform.position = waypoints[waypointIndex].transform.position;
-    }
-	
     // Update is called once per frame
     private void Update ()
     {
@@ -31,6 +24,8 @@ public class FollowThePath : MonoBehaviour {
             float angleToRotateMod360 = angleToRotate;
             if (angleToRotateMod360 < 0f)
                 angleToRotateMod360 += 360f;
+            if (angleToRotateMod360 >= 360f)
+                angleToRotateMod360 -= 360f;
             
             if (transform.eulerAngles.z >= angleToRotateMod360 - 5 && transform.eulerAngles.z <= angleToRotateMod360 + 5)
                 isRotating = false;

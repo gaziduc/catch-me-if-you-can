@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 39387184390822790}
   - component: {fileID: 39387184390822811}
   - component: {fileID: 39387184390822788}
-  m_Layer: 0
-  m_Name: tv_big_brother
+  m_Layer: 2
+  m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
