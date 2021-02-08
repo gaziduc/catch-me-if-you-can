@@ -10,7 +10,7 @@ public class FollowThePath : MonoBehaviour {
     private int waypointIndex = 0;
 
     private bool isRotating = false;
-    private float angleToRotateRemaining = 0f;
+    private float angleToRotate = 0f;
 
     // Use this for initialization
     private void Start ()
@@ -28,22 +28,25 @@ public class FollowThePath : MonoBehaviour {
     {
         if (isRotating)
         {
-            float angle = rotationSpeed * Time.deltaTime;
-            transform.Rotate(new Vector3(0, 0, -angle));
-            angleToRotateRemaining -= angle;
-
-            if (angleToRotateRemaining <= 0f)
-            {
+            float angleToRotateMod360 = angleToRotate;
+            if (angleToRotateMod360 < 0f)
+                angleToRotateMod360 += 360f;
+            
+            if (transform.eulerAngles.z >= angleToRotateMod360 - 5 && transform.eulerAngles.z <= angleToRotateMod360 + 5)
                 isRotating = false;
-                transform.Rotate(new Vector3(0, 0, -angleToRotateRemaining));
+            else
+            {
+                float angle = rotationSpeed * Time.deltaTime;
+            
+                if (angleToRotate < transform.eulerAngles.z)
+                    angle = -angle;
+
+                transform.Rotate(new Vector3(0, 0, angle));
             }
 
             return;
         }
-        
-        if (waypointIndex >= waypoints.Length)
-            waypointIndex = 0;
-        
+
         transform.position = Vector2.MoveTowards(transform.position,
             waypoints[waypointIndex].transform.position,
             moveSpeed * Time.deltaTime);
@@ -52,7 +55,17 @@ public class FollowThePath : MonoBehaviour {
         {
             waypointIndex += 1;
             isRotating = true;
-            angleToRotateRemaining = 90f;
+            
+            if (waypointIndex >= waypoints.Length)
+                waypointIndex = 0;
+            
+            
+            Vector3 dir = (waypoints[waypointIndex].transform.position - transform.position).normalized;
+            angleToRotate = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            if (transform.eulerAngles.z - angleToRotate > 180f)
+                angleToRotate += 360f;
+            else if (transform.eulerAngles.z - angleToRotate < -180f)
+                angleToRotate -= 360f;
         }
     }
 }

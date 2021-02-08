@@ -5,9 +5,11 @@ using UnityEngine;
 public class DieOnKnife : MonoBehaviour
 {
     public Object instantiate;
+    public bool isDead = false;
 
     private void SwitchState()
     {
+        isDead = true;
         GameObject.Instantiate(instantiate, transform.position, transform.rotation);
         gameObject.SetActive(false);
     }

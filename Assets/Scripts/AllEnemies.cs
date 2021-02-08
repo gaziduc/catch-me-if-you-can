@@ -30,9 +30,13 @@ public class AllEnemies : MonoBehaviour
         
         foreach (var enemy in enemiesFollowingPath)
         {
-            enemy.moveSpeed = moveSpeed;
-            enemy.rotationSpeed = rotationSpeed;
-            enemy.transform.GetChild(1).gameObject.SetActive(true);
+            if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
+            {
+                enemy.gameObject.SetActive(true);
+                enemy.moveSpeed = moveSpeed;
+                enemy.rotationSpeed = rotationSpeed;
+                enemy.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
         
         redSquare.SetActive(true);
