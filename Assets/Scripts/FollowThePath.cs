@@ -12,7 +12,7 @@ public class FollowThePath : MonoBehaviour
     private float angleToRotate = 0f;
 
     // Update is called once per frame
-    private void Update ()
+    private void FixedUpdate ()
     {
         Move();
     }
@@ -27,7 +27,7 @@ public class FollowThePath : MonoBehaviour
             if (angleToRotateMod360 >= 360f)
                 angleToRotateMod360 -= 360f;
             
-            if (transform.eulerAngles.z >= angleToRotateMod360 - 5 && transform.eulerAngles.z <= angleToRotateMod360 + 5)
+            if (transform.eulerAngles.z >= angleToRotateMod360 - 10 && transform.eulerAngles.z <= angleToRotateMod360 + 10)
                 isRotating = false;
             else
             {

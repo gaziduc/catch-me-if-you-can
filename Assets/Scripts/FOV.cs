@@ -28,6 +28,11 @@ public class FOV : MonoBehaviour
         for (int i = 0; i < targetsInRadius.Length; i++)
         {
             Transform target = targetsInRadius[i].transform;
+
+            if (target.gameObject.CompareTag("CollisionTiles"))
+            {
+                continue;
+            }
             
             Vector2 dirTarget = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
             Vector2 dir = new Vector2();
@@ -38,12 +43,15 @@ public class FOV : MonoBehaviour
             {
                 float distanceTarget = Vector2.Distance(transform.position, target.position);
 
+                UnityEngine.Debug.DrawRay(transform.position, dirTarget, Color.red);
                 var hit = Physics2D.Raycast(transform.position, dirTarget, distanceTarget, obstacleMask);
 
                 if (hit)
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
+                        UnityEngine.Debug.Log("Enter loose manager: " + gameObject.transform.parent.name);
+                        UnityEngine.Debug.Log(hit.collider);
                         GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
                     }
                     else if (hit.collider.CompareTag("BloodSplash"))
