@@ -9,7 +9,8 @@ public class PlayerMove : MonoBehaviour
     private Animator anim;
 
     public bool canMove = true;
-    public Object trail;
+    public Object[] trail;
+    public int trailIndex = 0;
 
     private int framecount = 0;
     
@@ -70,7 +71,7 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 90);
 
         if (framecount % 10 == 0)
-            GameObject.Instantiate(trail, transform.position, transform.rotation);
+            GameObject.Instantiate(trail[trailIndex], transform.position, transform.rotation);
         
         framecount++;
     }

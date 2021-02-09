@@ -10,7 +10,11 @@ public class Lose : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        
+        // if not in menu
+        if (go != null)
+            player = go.GetComponent<PlayerMove>();
     }
 
     public void Loose()

@@ -1,15 +1,42 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FollowThePath : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints;
-    public float moveSpeed = 2f;
-    public float rotationSpeed = 200f;
+    public float initialMoveSpeed = 2f;
+    public float initialRotationSpeed = 200f;
     
     private int waypointIndex = 0;
 
     private bool isRotating = false;
     private float angleToRotate = 0f;
+
+    private float moveSpeed;
+    private float rotationSpeed;
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            moveSpeed = initialMoveSpeed;
+            rotationSpeed = initialRotationSpeed;
+            return;
+        }
+
+        if (AllEnemies.instance.isInAlert || AllEnemies.instance.isInWarning)
+            return;
+        
+        moveSpeed = initialMoveSpeed;
+        rotationSpeed = initialRotationSpeed;
+    }
+
+    public void SetSpeed(float moveSpeed, float rotationSpeed)
+    {
+        this.moveSpeed = moveSpeed;
+        this.rotationSpeed = rotationSpeed;
+    }
 
     // Update is called once per frame
     private void FixedUpdate ()

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
-using Debug = System.Diagnostics.Debug;
+﻿using UnityEngine;
+
 
 public class FOV : MonoBehaviour
 {
@@ -30,10 +26,8 @@ public class FOV : MonoBehaviour
             Transform target = targetsInRadius[i].transform;
 
             if (target.gameObject.CompareTag("CollisionTiles"))
-            {
                 continue;
-            }
-            
+
             Vector2 dirTarget = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
             Vector2 dir = new Vector2();
             
@@ -43,21 +37,28 @@ public class FOV : MonoBehaviour
             {
                 float distanceTarget = Vector2.Distance(transform.position, target.position);
 
-                UnityEngine.Debug.DrawRay(transform.position, dirTarget, Color.red);
+                // Debug.DrawRay(transform.position, dirTarget, Color.red);
                 var hit = Physics2D.Raycast(transform.position, dirTarget, distanceTarget, obstacleMask);
 
                 if (hit)
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
-                        UnityEngine.Debug.Log("Enter loose manager: " + gameObject.transform.parent.name);
-                        UnityEngine.Debug.Log(hit.collider);
                         GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
                     }
                     else if (hit.collider.CompareTag("BloodSplash"))
                     {
+                        StatusManager.instance.Alert99();
+                        
                         if (!AllEnemies.instance.isInAlert)
                             AllEnemies.instance.AlertEnemies();
+                    }
+                    else if (hit.collider.CompareTag("Trail"))
+                    {
+                        StatusManager.instance.Warning99();
+                        
+                        if (!AllEnemies.instance.isInWarning && !AllEnemies.instance.isInAlert)
+                            AllEnemies.instance.WarnEnemies();
                     }
                 }
             }

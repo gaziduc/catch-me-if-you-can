@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5752971819450347063}
   - component: {fileID: 5752971819450347060}
   - component: {fileID: 4986698584462657335}
+  - component: {fileID: 3260683167241049161}
   m_Layer: 3
   m_Name: bloodSplash
   m_TagString: BloodSplash
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1.29}
   m_EdgeRadius: 0
+--- !u!114 &3260683167241049161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752971819450347061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa420a28546697740b5f8c92b2228eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroySpeed: 0.07

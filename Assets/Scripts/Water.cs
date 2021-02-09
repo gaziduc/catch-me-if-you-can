@@ -8,6 +8,7 @@ public class Water : MonoBehaviour
         {
             PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
             player.speed = player.speed / 2;
+            player.trailIndex = 1;
         }
     }
 
@@ -17,6 +18,7 @@ public class Water : MonoBehaviour
         {
             PlayerMove player = other.gameObject.GetComponent<PlayerMove>();
             player.speed = player.speed * 2;
+            player.trailIndex = 0;
         }
     }
 }

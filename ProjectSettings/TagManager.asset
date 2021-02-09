@@ -8,6 +8,7 @@ TagManager:
   - BloodSplash
   - Knife
   - CollisionTiles
+  - Trail
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Blood
   - Water
   - UI
-  - 
+  - Trail
   - 
   - 
   - 
