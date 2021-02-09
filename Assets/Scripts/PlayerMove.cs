@@ -1,4 +1,4 @@
-using System;
+
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
     private Animator anim;
 
     public bool canMove = true;
+    public Object trail;
+
+    private int framecount = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -65,5 +68,10 @@ public class PlayerMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 270);
         else if (change.y > 0f)
             transform.rotation = Quaternion.Euler(0, 0, 90);
+
+        if (framecount % 10 == 0)
+            GameObject.Instantiate(trail, transform.position, transform.rotation);
+        
+        framecount++;
     }
 }

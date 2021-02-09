@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   canMove: 1
+  trail: {fileID: 5752971819450347061, guid: 419bfac7abbb3564981103e0d92f54b9, type: 3}
 --- !u!50 &3953801450863836661
 Rigidbody2D:
   serializedVersion: 4
