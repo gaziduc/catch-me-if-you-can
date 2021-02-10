@@ -37,29 +37,40 @@ public class FOV : MonoBehaviour
             {
                 float distanceTarget = Vector2.Distance(transform.position, target.position);
 
-                // Debug.DrawRay(transform.position, dirTarget, Color.red);
-                var hit = Physics2D.Raycast(transform.position, dirTarget, distanceTarget, obstacleMask);
+                Debug.DrawRay(transform.position, dirTarget, Color.red);
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dirTarget, distanceTarget, obstacleMask);
 
-                if (hit)
+                int collisionIndex = -1;
+                
+                for (int j = 0; j < hits.Length; j++)
+                    if (hits[j].collider.CompareTag("CollisionTiles"))
+                        collisionIndex = j;
+                
+                foreach (var hit in hits)
                 {
-                    if (hit.collider.CompareTag("Player"))
+                    // If no collision tile before
+                    if (collisionIndex == -1 || hit.distance < hits[collisionIndex].distance)
                     {
-                        GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
+                        if (hit.collider.CompareTag("Player"))
+                        {
+                            GameObject.Find("LoseManager").GetComponent<Lose>().Loose();
+                        }
+                        else if (hit.collider.CompareTag("BloodSplash"))
+                        {
+                            StatusManager.instance.Alert99();
+                    
+                            if (!AllEnemies.instance.isInAlert)
+                                AllEnemies.instance.AlertEnemies();
+                        }
+                        else if (hit.collider.CompareTag("Trail"))
+                        {
+                            StatusManager.instance.Warning99();
+                    
+                            if (!AllEnemies.instance.isInWarning && !AllEnemies.instance.isInAlert)
+                                AllEnemies.instance.WarnEnemies();
+                        }
                     }
-                    else if (hit.collider.CompareTag("BloodSplash"))
-                    {
-                        StatusManager.instance.Alert99();
-                        
-                        if (!AllEnemies.instance.isInAlert)
-                            AllEnemies.instance.AlertEnemies();
-                    }
-                    else if (hit.collider.CompareTag("Trail"))
-                    {
-                        StatusManager.instance.Warning99();
-                        
-                        if (!AllEnemies.instance.isInWarning && !AllEnemies.instance.isInAlert)
-                            AllEnemies.instance.WarnEnemies();
-                    }
+                    
                 }
             }
         }
