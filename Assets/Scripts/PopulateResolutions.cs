@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PopulateResolutions : MonoBehaviour
 {
-    private Resolution[] resolutions;
+    private UnityEngine.Resolution[] resolutions;
     private Dropdown resolutionDropdown;
     
     void Start()
@@ -36,5 +36,10 @@ public class PopulateResolutions : MonoBehaviour
     public void SetResolution()
     {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen, resolutions[resolutionDropdown.value].refreshRate);
+        PlayerPrefs.SetInt("Screenmanager Resolution Width", resolutions[resolutionDropdown.value].width);
+        PlayerPrefs.SetInt("Screenmanager Resolution Height", resolutions[resolutionDropdown.value].height);
+        PlayerPrefs.SetInt("Screenmanager Is Fullscreen mode", Screen.fullScreen ? 1 : 0);
+        PlayerPrefs.SetInt("Screenmanager Refresh Rate", resolutions[resolutionDropdown.value].refreshRate);
+        PlayerPrefs.Save();
     }
 }

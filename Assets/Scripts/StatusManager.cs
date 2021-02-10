@@ -19,17 +19,17 @@ public class StatusManager : MonoBehaviour
         instance = this;
     }
 
-    private void SetAlertText(int alert)
+    private void SetAlertText()
     {
-        text.gameObject.SetActive(true);
-        text.text = "Alert! " + alert;
+        text.transform.parent.gameObject.SetActive(true);
+        text.text = "ALERT! " + alert;
         text.color = Color.red;
     }
     
-    private void SetWarningText(int alert)
+    private void SetWarningText()
     {
-        text.gameObject.SetActive(true);
-        text.text = "Warning! " + warning;
+        text.transform.parent.gameObject.SetActive(true);
+        text.text = "WARNING! " + warning;
         text.color = new Color(1f, 0.5f, 0f, 1f);
     }
 
@@ -44,7 +44,7 @@ public class StatusManager : MonoBehaviour
                 if (alert > 0)
                 {
                     alert--;
-                    SetAlertText(alert);
+                    SetAlertText();
                 }
                 else if (warning > 0)
                 {
@@ -61,13 +61,13 @@ public class StatusManager : MonoBehaviour
                         
                     
                     warning--;
-                    SetWarningText(warning);
+                    SetWarningText();
                 }
-                else if (text.gameObject.activeSelf)
+                else if (text.gameObject.activeInHierarchy)
                 {
                     AllEnemies.instance.ResetEnemiesState();
 
-                    text.gameObject.SetActive(false);
+                    text.transform.parent.gameObject.SetActive(false);
 
                     if (spottedMusic.isPlaying)
                         music.Stop();
@@ -98,7 +98,7 @@ public class StatusManager : MonoBehaviour
         
         alert = 99;
         warning = 99;
-        SetAlertText(alert);
+        SetAlertText();
     }
     
     public void Warning99()
@@ -117,6 +117,6 @@ public class StatusManager : MonoBehaviour
         }
         
         warning = 99;
-        SetWarningText(warning);
+        SetWarningText();
     }
 }

@@ -23018,7 +23018,7 @@ GameObject:
   - component: {fileID: 1655942055}
   - component: {fileID: 1655942054}
   - component: {fileID: 1655942053}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23431,7 +23431,7 @@ GameObject:
   - component: {fileID: 1865862753}
   - component: {fileID: 1865862752}
   - component: {fileID: 1865862751}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}

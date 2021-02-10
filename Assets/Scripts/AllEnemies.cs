@@ -5,22 +5,15 @@ public class AllEnemies : MonoBehaviour
 {
     public static AllEnemies instance = null;
     public FollowThePath[] enemiesFollowingPath;
-    public int moveSpeedAlert;
-    public int moveSpeedWarning;
-    public float rotationSpeedAlert;
-    public float rotationSpeedWarning;
-    
+
     public GameObject redSquare;
     
-    public bool isInAlert;
-    public bool isInWarning;
+    public bool isInAlert = false;
+    public bool isInWarning = false;
 
     private void Start()
     {
         instance = this;
-
-        isInAlert = false;
-        isInWarning = false;
     }
 
     public void AlertEnemies()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6363698252501726396}
   - component: {fileID: 6363698252501726397}
   - component: {fileID: 6363698252501726386}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: red_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
