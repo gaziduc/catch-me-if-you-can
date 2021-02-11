@@ -11,7 +11,9 @@ public class PlayerMove : MonoBehaviour
     public bool canMove = true;
     public Object[] trail;
     public int trailIndex = 0;
-
+    public int playerNum = 0;
+    
+    
     private int framecount = 0;
     
     // Start is called before the first frame update
@@ -21,17 +23,35 @@ public class PlayerMove : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+
+    private void GetInput(ref Vector3 change, KeyCode left, KeyCode right, KeyCode up, KeyCode down, KeyCode attack)
+    {
+        if (Input.GetKey(left))
+            change.x = -1;
+        if (Input.GetKey(right))
+            change.x = 1;
+        
+        if (Input.GetKey(up))
+            change.y = 1;
+        if (Input.GetKey(down))
+            change.y = -1;
+        
+        if (Input.GetKeyDown(attack))
+            anim.SetTrigger("Attack");
+    }
+    
     // Update is called once per frame
     void Update()
     {
         if (canMove)
         {
             change = Vector3.zero;
-            change.x = Input.GetAxisRaw("Horizontal");
-            change.y = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetButtonDown("Jump"))
-                anim.SetTrigger("Attack");
+            if (playerNum == 0 || playerNum == 1)
+                GetInput(ref change, KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.Space);
+            
+            if (playerNum == 0 || playerNum == 2)
+                GetInput(ref change, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.Return);
         }
     }
 
@@ -70,6 +90,7 @@ public class PlayerMove : MonoBehaviour
         else if (change.y > 0f)
             transform.rotation = Quaternion.Euler(0, 0, 90);
 
+        // Trail
         if (framecount % 10 == 0)
             GameObject.Instantiate(trail[trailIndex], transform.position, transform.rotation);
         
