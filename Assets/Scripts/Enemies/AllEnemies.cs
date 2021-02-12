@@ -11,7 +11,7 @@ public class AllEnemies : MonoBehaviour
     public bool isInAlert = false;
     public bool isInWarning = false;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
@@ -36,8 +36,10 @@ public class AllEnemies : MonoBehaviour
 
     public void WarnEnemies()
     {
+        Debug.Log(enemiesFollowingPath);
         foreach (var enemy in enemiesFollowingPath)
         {
+            Debug.Log(enemy);
             if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
             {
                 enemy.gameObject.SetActive(true);

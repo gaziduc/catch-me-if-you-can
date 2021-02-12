@@ -38,40 +38,44 @@ public class CameraFollow2P : MonoBehaviour
             distance.x = -distance.x;
         if (distance.y < 0)
             distance.y = -distance.y;
-
+        
         // Move camera a certain distance
         Vector3 cameraDestination = new Vector3(midpoint.x, midpoint.y, cam.transform.position.z);
-
+        
         // Adjust ortho size if we're using one of those
         if (cam.orthographic)
         {
-            // The camera's forward vector is irrelevant, only this size will matter
-            cam.orthographicSize = distance.y / 2 * zoomFactor;
-            
+            float size = distance.y / 2 * zoomFactor;
             float xSize = distance.x * Screen.height / Screen.width;
-            if (xSize > distance.y)
-                cam.orthographicSize = xSize / 2 * zoomFactor;
             
-            if (cam.orthographicSize < initialSize)
-                cam.orthographicSize = initialSize;
+            if (xSize > distance.y)
+                size = xSize / 2 * zoomFactor;
+            
+            if (size < initialSize)
+                size = initialSize;
+            
+            // The camera's forward vector is irrelevant, only this size will matter
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, size, 0.03f);
+
+            
         }
 
         // You specified to use MoveTowards instead of Slerp
-        cam.transform.position = Vector3.Slerp(cam.transform.position, cameraDestination, followTimeDelta);
-        
+        cam.transform.position = cameraDestination;//Vector3.Slerp(cam.transform.position, cameraDestination, followTimeDelta);
         // Slerp Bug Fix (camera changing in Z pos)
-        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, -10);
+        //cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, -10);
         
         
         // Snap when close enough to prevent annoying slerp behavior
-        if ((cameraDestination - cam.transform.position).magnitude <= 0.05f)
-            cam.transform.position = cameraDestination;
+        //if ((cameraDestination - cam.transform.position).magnitude <= 0.05f)
+        //    cam.transform.position = cameraDestination;
         
         float horzExtent = cam.orthographicSize * Screen.width / Screen.height;
 
 
         if (IsOutboundLeft(cam, horzExtent) && IsOutboundRight(cam, horzExtent) ||
-            IsOutboundUp(cam) && IsOutboundDown(cam))
+            IsOutboundUp(cam) && IsOutboundDown(cam) || 
+            cam.orthographicSize * 2 > maxPosition.y - minPosition.y) 
         {
             cam.transform.position = new Vector3((maxPosition.x + minPosition.x) / 2,
                 (maxPosition.y + minPosition.y) / 2, cam.transform.position.z);
@@ -80,16 +84,16 @@ public class CameraFollow2P : MonoBehaviour
         else
         {
             if (IsOutboundLeft(cam, horzExtent))
-                cam.transform.position = new Vector3(minPosition.x + horzExtent, cam.transform.position.y, cam.transform.position.z);
-
+                cam.transform.position = new Vector3(minPosition.x + horzExtent, cam.transform.position.y,
+                    cam.transform.position.z);
             else if (IsOutboundRight(cam, horzExtent))
                 cam.transform.position = new Vector3(maxPosition.x - horzExtent, cam.transform.position.y, cam.transform.position.z);
 
             if (IsOutboundUp(cam))
-                cam.transform.position = new Vector3(cam.transform.position.x, minPosition.y + cam.orthographicSize, cam.transform.position.z);
+                cam.transform.position = new Vector3(cam.transform.position.x, maxPosition.y - cam.orthographicSize, cam.transform.position.z);
 
             else if (IsOutboundDown(cam))
-                cam.transform.position = new Vector3(cam.transform.position.x, maxPosition.y - cam.orthographicSize, cam.transform.position.z);
+                cam.transform.position = new Vector3(cam.transform.position.x, minPosition.y + cam.orthographicSize, cam.transform.position.z);
         }
     }
 
@@ -105,11 +109,11 @@ public class CameraFollow2P : MonoBehaviour
     
     private bool IsOutboundUp(Camera cam)
     {
-        return cam.transform.position.y - cam.orthographicSize < minPosition.y;
+        return cam.transform.position.y + cam.orthographicSize > maxPosition.y;
     }
     
     private bool IsOutboundDown(Camera cam)
     {
-        return cam.transform.position.y + cam.orthographicSize > maxPosition.y;
+        return cam.transform.position.y - cam.orthographicSize < minPosition.y;
     }
 }
