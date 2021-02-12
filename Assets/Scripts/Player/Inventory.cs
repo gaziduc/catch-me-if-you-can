@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -18,8 +17,12 @@ public class Inventory : MonoBehaviour
     {
         instance = this;
         
-        numTVsText = GameObject.Find("numTVsText").GetComponent<Text>();
-        numKillsText = GameObject.Find("numKillsText").GetComponent<Text>();
+        // If is in menu
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            numTVsText = GameObject.Find("numTVsText").GetComponent<Text>();
+            numKillsText = GameObject.Find("numKillsText").GetComponent<Text>();
+        }
     }
 
     public void AddNumTVs()

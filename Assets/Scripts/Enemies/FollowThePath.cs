@@ -39,7 +39,7 @@ public class FollowThePath : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate ()
+    private void FixedUpdate()
     {
         Move();
     }
@@ -54,15 +54,15 @@ public class FollowThePath : MonoBehaviour
             if (angleToRotateMod360 >= 360f)
                 angleToRotateMod360 -= 360f;
             
-            if (transform.eulerAngles.z >= angleToRotateMod360 - 10 && transform.eulerAngles.z <= angleToRotateMod360 + 10)
+            if (transform.eulerAngles.z >= angleToRotateMod360 - 6 && transform.eulerAngles.z <= angleToRotateMod360 + 6)
                 isRotating = false;
             else
             {
-                float angle = rotationSpeed * Time.deltaTime;
-            
+                float angle = rotationSpeed * Time.fixedDeltaTime;
+                
                 if (angleToRotate < transform.eulerAngles.z)
                     angle = -angle;
-
+                
                 transform.Rotate(new Vector3(0, 0, angle));
             }
 
@@ -80,7 +80,6 @@ public class FollowThePath : MonoBehaviour
             
             if (waypointIndex >= waypoints.Length)
                 waypointIndex = 0;
-            
             
             Vector3 dir = (waypoints[waypointIndex].transform.position - transform.position).normalized;
             angleToRotate = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
