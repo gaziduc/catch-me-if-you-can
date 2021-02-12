@@ -14,8 +14,7 @@ public class Win : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             endScreen.SetActive(true);
-            Inventory inventory = other.gameObject.GetComponent<Inventory>();
-            scoreText.text = "SCORE: " + ((inventory.numKills + inventory.numTVs) * 100).ToString();
+            scoreText.text = "SCORE: " + ((Inventory.instance.numKills + Inventory.instance.numTVs) * 100).ToString();
             other.gameObject.GetComponent<PlayerMove>().canMove = false;
             Time.timeScale = 0f;
         }

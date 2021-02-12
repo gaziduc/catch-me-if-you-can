@@ -11,9 +11,13 @@ public class Inventory : MonoBehaviour
     private Text numTVsText;
     private Text numKillsText;
 
+    public static Inventory instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+        
         numTVsText = GameObject.Find("numTVsText").GetComponent<Text>();
         numKillsText = GameObject.Find("numKillsText").GetComponent<Text>();
     }

@@ -5,38 +5,30 @@ public class DieOnKnife : MonoBehaviour
     public Object instantiate;
     public bool isDead = false;
 
-    private void SwitchState()
+    private void SwitchStateIfKnife(Collider2D other)
     {
-        isDead = true;
-        GameObject.Instantiate(instantiate, transform.position, transform.rotation);
-        gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Knife"))
+        {
+            var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            
+            if (animation.IsName("PlayerAttackKnife"))
+            {
+                isDead = true;
+                GameObject.Instantiate(instantiate, transform.position, transform.rotation);
+                gameObject.SetActive(false);
+                Inventory.instance.AddKill();
+            }
+        }
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Knife"))
-        {
-            var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-            
-            if (animation.IsName("PlayerAttackKnife"))
-            {
-                SwitchState();
-                other.transform.parent.GetComponent<Inventory>().AddKill();
-            }
-        }
+        SwitchStateIfKnife(other);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Knife"))
-        {
-            var animation = other.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-            
-            if (animation.IsName("PlayerAttackKnife"))
-            {
-                SwitchState();
-                other.transform.parent.GetComponent<Inventory>().AddKill();
-            }
-        }
+       SwitchStateIfKnife(other);
     }
 }

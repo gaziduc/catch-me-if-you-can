@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 3953801450863836661}
   - component: {fileID: 3953801450863836663}
   - component: {fileID: 3953801450863836656}
-  - component: {fileID: 3953801450863836657}
   - component: {fileID: 2102210585}
   m_Layer: 0
   m_Name: Player
@@ -243,6 +242,7 @@ MonoBehaviour:
   - {fileID: 5752971819450347061, guid: c19b326c4d69a834c85c3fba8ac103b8, type: 3}
   - {fileID: 5752971819450347061, guid: 419bfac7abbb3564981103e0d92f54b9, type: 3}
   trailIndex: 0
+  playerNum: 0
 --- !u!50 &3953801450863836661
 Rigidbody2D:
   serializedVersion: 4
@@ -295,20 +295,6 @@ MonoBehaviour:
   minPosition: {x: 11.75, y: -22}
   maxPosition: {x: 18.25, y: -4}
   smoothTime: 0.2
---- !u!114 &3953801450863836657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3953801450863836649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b6a095200fb184e99f591db158590d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numTVs: 0
-  numKills: 0
 --- !u!82 &2102210585
 AudioSource:
   m_ObjectHideFlags: 0

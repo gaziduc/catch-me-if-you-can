@@ -8,7 +8,7 @@ public class Collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Inventory>().AddNumTVs();
+            Inventory.instance.AddNumTVs();
             gameObject.SetActive(false);
         }
     }

@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5802688340963634735}
   - component: {fileID: 5802688340963634732}
+  - component: {fileID: 5047209056761735748}
   m_Layer: 0
   m_Name: StatusManager
   m_TagString: Untagged
@@ -388,6 +389,20 @@ MonoBehaviour:
   spottedMusic: {fileID: 5802688340129257595}
   warningMusic: {fileID: 5802688341303962344}
   music: {fileID: 5802688339973446320}
+--- !u!114 &5047209056761735748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802688340963634733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b6a095200fb184e99f591db158590d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numTVs: 0
+  numKills: 0
 --- !u!1 &5802688341006396213
 GameObject:
   m_ObjectHideFlags: 0
