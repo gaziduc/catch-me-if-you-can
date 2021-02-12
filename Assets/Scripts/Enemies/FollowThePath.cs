@@ -54,7 +54,7 @@ public class FollowThePath : MonoBehaviour
             if (angleToRotateMod360 >= 360f)
                 angleToRotateMod360 -= 360f;
             
-            if (transform.eulerAngles.z >= angleToRotateMod360 - 6 && transform.eulerAngles.z <= angleToRotateMod360 + 6)
+            if (transform.eulerAngles.z >= angleToRotateMod360 - 10 && transform.eulerAngles.z <= angleToRotateMod360 + 10)
                 isRotating = false;
             else
             {

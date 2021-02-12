@@ -32,14 +32,13 @@ public class AllEnemies : MonoBehaviour
         redSquare.SetActive(true);
 
         isInAlert = true;
+        isInWarning = false;
     }
 
     public void WarnEnemies()
     {
-        Debug.Log(enemiesFollowingPath);
         foreach (var enemy in enemiesFollowingPath)
         {
-            Debug.Log(enemy);
             if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
             {
                 enemy.gameObject.SetActive(true);
@@ -50,6 +49,9 @@ public class AllEnemies : MonoBehaviour
         }
         
         redSquare.SetActive(false);
+
+        isInAlert = false;
+        isInWarning = true;
     }
 
     public void ResetEnemiesState()
@@ -65,5 +67,8 @@ public class AllEnemies : MonoBehaviour
         }
         
         redSquare.SetActive(false);
+        
+        isInAlert = false;
+        isInWarning = false;
     }
 }

@@ -14,7 +14,7 @@ public class StatusManager : MonoBehaviour
     public AudioSource warningMusic;
     public AudioSource music;
     
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
@@ -22,14 +22,20 @@ public class StatusManager : MonoBehaviour
     private void SetAlertText()
     {
         text.transform.parent.gameObject.SetActive(true);
-        text.text = "ALERT! " + alert;
+        if (alert >= 99)
+            text.text = "ALERT! 99";
+        else
+            text.text = "ALERT! " + alert;
         text.color = Color.red;
     }
     
     private void SetWarningText()
     {
         text.transform.parent.gameObject.SetActive(true);
-        text.text = "WARNING! " + warning;
+        if (warning >= 99)
+            text.text = "WARNING! 99";
+        else
+            text.text = "WARNING! " + warning;
         text.color = new Color(1f, 0.5f, 0f, 1f);
     }
 
@@ -48,7 +54,7 @@ public class StatusManager : MonoBehaviour
                 }
                 else if (warning > 0)
                 {
-                    if (warning == 99)
+                    if (warning == 110)
                     {
                         if (music.isPlaying)
                             music.Stop();
@@ -96,8 +102,8 @@ public class StatusManager : MonoBehaviour
         }
             
         
-        alert = 99;
-        warning = 99;
+        alert = 110;
+        warning = 110;
         SetAlertText();
     }
     
@@ -116,7 +122,7 @@ public class StatusManager : MonoBehaviour
             warningMusic.Play();
         }
         
-        warning = 99;
+        warning = 110;
         SetWarningText();
     }
 }
