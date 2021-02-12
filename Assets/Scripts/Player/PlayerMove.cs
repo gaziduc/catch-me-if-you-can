@@ -58,6 +58,9 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // bug fix (If p1 go through p2)
+        my_rigidbody.velocity = Vector2.zero;
+        
         if (change != Vector3.zero)
         {
             MoveCharacter();

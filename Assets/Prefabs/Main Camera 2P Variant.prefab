@@ -49,7 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 118127421990653957, guid: d07e9707dc978f34e8db4d5f7ec3d410, type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: Main Camera 2P Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 118127421990653958, guid: d07e9707dc978f34e8db4d5f7ec3d410, type: 3}
+      propertyPath: orthographic size
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 118127421990654201, guid: d07e9707dc978f34e8db4d5f7ec3d410, type: 3}
       propertyPath: m_RootOrder

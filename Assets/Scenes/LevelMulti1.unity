@@ -41153,10 +41153,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3072210658499599917, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
-      propertyPath: m_Text
-      value: ALERT! 99
-      objectReference: {fileID: 0}
     - target: {fileID: 4598994087465983179, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -41292,14 +41288,6 @@ PrefabInstance:
     - target: {fileID: 4598994089399577132, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518283002644412930, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 208.9259
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518283002644412930, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 59.589
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
@@ -42496,6 +42484,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 299172202}
+    - target: {fileID: 1057818461, guid: 3e779ead91cac2144872cf3b09e84c2e, type: 3}
+      propertyPath: followTimeDelta
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3222752529579944821, guid: 3e779ead91cac2144872cf3b09e84c2e, type: 3}
       propertyPath: m_RootOrder
       value: 0
