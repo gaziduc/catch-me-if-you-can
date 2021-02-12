@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &55971107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9058118593515722360, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
+  m_PrefabInstance: {fileID: 9058118593774834001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a328f37cafc0da4e8e6e7d0aea18580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &156340125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18522,6 +18533,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2096381288}
     - target: {fileID: 5802688340129257593, guid: e61a9a01979631f45aec867ae756c595, type: 3}
+      propertyPath: enemiesRotating.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802688340129257593, guid: e61a9a01979631f45aec867ae756c595, type: 3}
+      propertyPath: enemiesRotating.Array.data[0]
+      value: 
+      objectReference: {fileID: 55971107}
+    - target: {fileID: 5802688340129257593, guid: e61a9a01979631f45aec867ae756c595, type: 3}
       propertyPath: enemiesFollowingPath.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -19513,6 +19532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4872045690340609961, guid: 5e3e7086ce5ea8941a6070805c9f3f58, type: 3}
+      propertyPath: initialSpeed
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3e7086ce5ea8941a6070805c9f3f58, type: 3}
 --- !u!1001 &6363698253884021595
@@ -19651,6 +19674,10 @@ PrefabInstance:
     - target: {fileID: 9058118593515722356, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
       propertyPath: m_Name
       value: EnemyRotating
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058118593515722360, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
+      propertyPath: initialSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9058118593515722361, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
       propertyPath: m_RootOrder

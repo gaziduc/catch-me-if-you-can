@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class EnemyRotate : MonoBehaviour
 {
-    public float speed;
+    public float initialSpeed;
     public bool isGoingLeft = true;
     public float minRotationZ;
     public float maxRotationZ;
     public bool hasBounds = true;
     
     private float initialRotationZ;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
+        speed = initialSpeed;
+        
         if (hasBounds)
             initialRotationZ = transform.rotation.eulerAngles.z;
     }
@@ -31,5 +34,10 @@ public class EnemyRotate : MonoBehaviour
             else if (transform.rotation.eulerAngles.z > initialRotationZ + maxRotationZ)
                 isGoingLeft = true;
         }
+    }
+
+    public void SetRotationSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }

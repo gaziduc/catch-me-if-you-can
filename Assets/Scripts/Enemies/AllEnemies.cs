@@ -5,6 +5,7 @@ public class AllEnemies : MonoBehaviour
 {
     public static AllEnemies instance = null;
     public FollowThePath[] enemiesFollowingPath;
+    public EnemyRotate[] enemiesRotating;
 
     public GameObject redSquare;
     
@@ -24,6 +25,16 @@ public class AllEnemies : MonoBehaviour
             {
                 enemy.gameObject.SetActive(true);
                 enemy.SetSpeed(enemy.initialMoveSpeed * 1.8f, enemy.initialRotationSpeed * 1.8f);
+                enemy.transform.GetChild(1).gameObject.SetActive(true);
+                enemy.transform.GetChild(2).gameObject.SetActive(false);
+            }
+        }
+
+        foreach (var enemy in enemiesRotating)
+        {
+            if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
+            {
+                enemy.SetRotationSpeed(enemy.initialSpeed * 1.8f);
                 enemy.transform.GetChild(1).gameObject.SetActive(true);
                 enemy.transform.GetChild(2).gameObject.SetActive(false);
             }
@@ -48,6 +59,16 @@ public class AllEnemies : MonoBehaviour
             }
         }
         
+        foreach (var enemy in enemiesRotating)
+        {
+            if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
+            {
+                enemy.SetRotationSpeed(enemy.initialSpeed * 1.4f);
+                enemy.transform.GetChild(1).gameObject.SetActive(false);
+                enemy.transform.GetChild(2).gameObject.SetActive(true);
+            }
+        }
+        
         redSquare.SetActive(false);
 
         isInAlert = false;
@@ -61,6 +82,16 @@ public class AllEnemies : MonoBehaviour
             if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
             {
                 enemy.SetSpeed(enemy.initialMoveSpeed, enemy.initialRotationSpeed);
+                enemy.transform.GetChild(1).gameObject.SetActive(false);
+                enemy.transform.GetChild(2).gameObject.SetActive(false);
+            }
+        }
+        
+        foreach (var enemy in enemiesRotating)
+        {
+            if (!enemy.gameObject.GetComponent<DieOnKnife>().isDead)
+            {
+                enemy.SetRotationSpeed(enemy.initialSpeed);
                 enemy.transform.GetChild(1).gameObject.SetActive(false);
                 enemy.transform.GetChild(2).gameObject.SetActive(false);
             }
