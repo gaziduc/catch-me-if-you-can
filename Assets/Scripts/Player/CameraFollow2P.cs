@@ -71,15 +71,7 @@ public class CameraFollow2P : MonoBehaviour
 
 
         if (IsOutboundLeft(cam, horzExtent) && IsOutboundRight(cam, horzExtent) ||
-            IsOutboundUp(cam) && IsOutboundDown(cam) ||
-            IsOutboundLeft(cam, horzExtent) && IsOutboundDown(cam) &&
-            cam.transform.position.x > (maxPosition.x + minPosition.x) / 2 ||
-            IsOutboundRight(cam, horzExtent) && IsOutboundDown(cam) &&
-            cam.transform.position.x < (maxPosition.x + minPosition.x) / 2 ||
-            IsOutboundRight(cam, horzExtent) && IsOutboundUp(cam) &&
-            cam.transform.position.x > (maxPosition.x + minPosition.x) / 2 ||
-            IsOutboundLeft(cam, horzExtent) && IsOutboundUp(cam) &&
-            cam.transform.position.x < (maxPosition.x + minPosition.x) / 2)
+            IsOutboundUp(cam) && IsOutboundDown(cam))
         {
             cam.transform.position = new Vector3((maxPosition.x + minPosition.x) / 2,
                 (maxPosition.y + minPosition.y) / 2, cam.transform.position.z);
