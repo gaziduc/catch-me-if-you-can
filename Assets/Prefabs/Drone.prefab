@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149e8cdbd5048cc44ad6f3a3bf3adb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRes: 10
   vertices: []
   triangles: 
   stepCount: 0
@@ -281,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 3.5
-  viewAngle: 360.0001
+  viewAngle: 360.5
   obstacleMask:
     serializedVersion: 2
     m_Bits: 59

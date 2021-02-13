@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FOVMesh : MonoBehaviour
 {
-    FOV fov;
-    Mesh mesh;
-    RaycastHit2D hit;
-    [SerializeField] float meshRes = 2;
+    private FOV fov;
+    private Mesh mesh;
+    private RaycastHit2D hit;
+    private float meshRes = 5;
     [HideInInspector] public Vector3[] vertices;
     [HideInInspector] public int[] triangles;
     [HideInInspector] public int stepCount;
