@@ -12,6 +12,9 @@ public class PlayerMove : MonoBehaviour
     public Object[] trail;
     public int trailIndex = 0;
     public int playerNum = 0;
+
+    public AudioSource knifeAudioSource;
+    public AudioSource tvAudioSource;
     
     
     private int framecount = 0;
@@ -35,9 +38,12 @@ public class PlayerMove : MonoBehaviour
             change.y = 1;
         if (Input.GetKey(down))
             change.y = -1;
-        
+
         if (Input.GetKeyDown(attack))
+        {
             anim.SetTrigger("Attack");
+            knifeAudioSource.Play();
+        }
     }
     
     // Update is called once per frame

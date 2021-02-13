@@ -9,6 +9,7 @@ public class Collectable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Inventory.instance.AddNumTVs();
+            collision.gameObject.GetComponent<PlayerMove>().tvAudioSource.Play();
             gameObject.SetActive(false);
         }
     }

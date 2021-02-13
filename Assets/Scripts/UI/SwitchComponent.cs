@@ -8,16 +8,26 @@ public class SwitchComponent : MonoBehaviour
     public Sprite newSprite;
     public bool HasToCut;
     private SpriteRenderer spriteRenderer;
+    private AudioSource sound;
+
+    private bool hasSwitchedState = false;
     
     private void Start()
     {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        sound = GetComponent<AudioSource>();
     }
 
     private void SwitchState()
     {
-        component.SetActive(false);
-        spriteRenderer.sprite = newSprite;
+        if (!hasSwitchedState)
+        {
+            sound.Play();
+            component.SetActive(false);
+            spriteRenderer.sprite = newSprite;
+
+            hasSwitchedState = true;
+        }
     }
 
     private void PlayerCut(Collider2D other)
