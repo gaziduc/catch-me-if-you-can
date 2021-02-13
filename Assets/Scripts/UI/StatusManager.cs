@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class StatusManager : MonoBehaviour
 {
     public Text text;
+    public Slider slider;
+    public Image image;
     public int alert = 0;
     public int warning = 0;
     private int framecount = 0;
@@ -26,6 +28,9 @@ public class StatusManager : MonoBehaviour
             text.text = "ALERT! 99";
         else
             text.text = "ALERT! " + alert;
+
+        slider.value = alert;
+        image.color = Color.red;
         text.color = Color.red;
     }
     
@@ -36,6 +41,8 @@ public class StatusManager : MonoBehaviour
             text.text = "WARNING! 99";
         else
             text.text = "WARNING! " + warning;
+        slider.value = warning;
+        image.color = new Color(1f, 0.5f, 0f, 1f);
         text.color = new Color(1f, 0.5f, 0f, 1f);
     }
 
