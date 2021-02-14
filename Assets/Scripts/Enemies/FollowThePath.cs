@@ -10,14 +10,18 @@ public class FollowThePath : MonoBehaviour
     
     private int waypointIndex = 0;
 
-    private bool isRotating = false;
+    public bool isRotating = false;
     private float angleToRotate = 0f;
 
     private float moveSpeed;
     private float rotationSpeed;
 
+    private EnemyRotate enemyRotate;
+
     private void Start()
     {
+        enemyRotate = GetComponent<EnemyRotate>();
+
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             moveSpeed = initialMoveSpeed;
@@ -30,6 +34,7 @@ public class FollowThePath : MonoBehaviour
         
         moveSpeed = initialMoveSpeed;
         rotationSpeed = initialRotationSpeed;
+
     }
 
     public void SetSpeed(float moveSpeed, float rotationSpeed)
@@ -53,9 +58,14 @@ public class FollowThePath : MonoBehaviour
                 angleToRotateMod360 += 360f;
             if (angleToRotateMod360 >= 360f)
                 angleToRotateMod360 -= 360f;
-            
-            if (transform.eulerAngles.z >= angleToRotateMod360 - 10 && transform.eulerAngles.z <= angleToRotateMod360 + 10)
+
+            if (transform.eulerAngles.z >= angleToRotateMod360 - 10 &&
+                transform.eulerAngles.z <= angleToRotateMod360 + 10)
+            {
                 isRotating = false;
+                if (enemyRotate)
+                    enemyRotate.SetCurrentRotationZ(transform.eulerAngles.z);
+            }
             else
             {
                 float angle = rotationSpeed * Time.fixedDeltaTime;

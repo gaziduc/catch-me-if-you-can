@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3089255383536465536}
   - component: {fileID: 3089255383536465542}
   - component: {fileID: 7812735595579888241}
+  - component: {fileID: 287469808306277369}
   m_Layer: 2
   m_Name: EnemyWaypoints
   m_TagString: Enemy
@@ -165,6 +166,7 @@ MonoBehaviour:
   - {fileID: 0}
   initialMoveSpeed: 2
   initialRotationSpeed: 200
+  isRotating: 0
 --- !u!114 &7812735595579888241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +181,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiate: {fileID: 5752971819450347061, guid: 13a7ed078667e44cf99bde72705f4518, type: 3}
   isDead: 0
+--- !u!114 &287469808306277369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089255383536465539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a328f37cafc0da4e8e6e7d0aea18580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialSpeed: 30
+  isGoingLeft: 1
+  minRotationZ: -10
+  maxRotationZ: 10
+  hasBounds: 1
 --- !u!1 &3089255384114924968
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149e8cdbd5048cc44ad6f3a3bf3adb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRes: 10
   vertices: []
   triangles: 
   stepCount: 0

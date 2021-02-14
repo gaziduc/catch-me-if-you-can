@@ -19518,6 +19518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampadaire
       objectReference: {fileID: 0}
+    - target: {fileID: 4872045689619337483, guid: 5e3e7086ce5ea8941a6070805c9f3f58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4872045689619337527, guid: 5e3e7086ce5ea8941a6070805c9f3f58, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -19704,6 +19708,10 @@ PrefabInstance:
     - target: {fileID: 9058118593515722356, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
       propertyPath: m_Name
       value: EnemyRotating
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058118593515722356, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9058118593515722360, guid: 053231887d5b2f249b25da0b74905dbf, type: 3}
       propertyPath: initialSpeed
