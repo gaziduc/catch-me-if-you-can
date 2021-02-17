@@ -19360,6 +19360,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4598994087465983176, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -337
+      objectReference: {fileID: 0}
     - target: {fileID: 4598994087465983179, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -19368,6 +19372,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 277738637}
+    - target: {fileID: 4598994087666549570, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -421
+      objectReference: {fileID: 0}
     - target: {fileID: 4598994087666549573, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -19376,6 +19384,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 277738637}
+    - target: {fileID: 4598994087863146294, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 525.6256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598994087863146295, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4598994089025299392, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -19472,6 +19488,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 277738637}
+    - target: {fileID: 7101761667626449065, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -203
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef11ec645a868d14dad616d168cf16aa, type: 3}
 --- !u!114 &4598994089215225466 stripped
