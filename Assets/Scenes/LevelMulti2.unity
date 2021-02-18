@@ -195,6 +195,10 @@ PrefabInstance:
       value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 3354515478560797599, guid: b2b6044a2872c9a4996b294f0299749b, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354515478560797599, guid: b2b6044a2872c9a4996b294f0299749b, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1710464028}
@@ -58129,6 +58133,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -58223,6 +58231,10 @@ PrefabInstance:
     - target: {fileID: 3089255383536465541, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
@@ -58636,6 +58648,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -58727,6 +58743,10 @@ PrefabInstance:
     - target: {fileID: 3089255383536465541, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -58975,7 +58995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: initialMoveSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
@@ -59085,6 +59105,10 @@ PrefabInstance:
     - target: {fileID: 3089255383536465541, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
@@ -59626,6 +59650,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -59697,6 +59725,10 @@ PrefabInstance:
     - target: {fileID: 3089255383536465541, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
@@ -59847,7 +59879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: initialMoveSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3089255383536465542, guid: bf02ca06cd456a749baf41fc18614f8f, type: 3}
       propertyPath: waypoints.Array.size
