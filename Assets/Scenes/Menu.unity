@@ -2738,8 +2738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119.6, y: 1.9}
-  m_SizeDelta: {x: 184.8659, y: 33.556}
+  m_AnchoredPosition: {x: 119, y: 0.00003159}
+  m_SizeDelta: {x: 184.87, y: 35.936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877566314
 MonoBehaviour:
@@ -18658,8 +18658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 35}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -74.93707, y: 30}
+  m_SizeDelta: {x: 302.5269, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066309528
 MonoBehaviour:
@@ -18688,19 +18688,21 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Move: Arrow keys / WASD
+  m_Text: 'Move -> <color=orange>P1</color> W, A, S, D keys | <color=orange>P2</color>
+    Arrow keys
 
 
-    Use knife: Space
+    Use knife -> <color=orange>P1</color> Space | <color=orange>P2</color>
+    Enter
 
 
-    Pause: Escape'
+    Pause -> Escape'
 --- !u!222 &2066309529
 CanvasRenderer:
   m_ObjectHideFlags: 0

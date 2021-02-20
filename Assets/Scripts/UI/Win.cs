@@ -16,7 +16,7 @@ public class Win : MonoBehaviour
             endScreen.SetActive(true);
             scoreText.text = "100 x " + Inventory.instance.numTVs + " TVs = " + (Inventory.instance.numTVs * 100)
                              + "\n80 x " + Inventory.instance.numKills + " kills = " + (Inventory.instance.numKills * 80) +
-                "\nSCORE: " + (Inventory.instance.numTVs * 100 + Inventory.instance.numKills * 80);
+                "\nTOTAL = " + (Inventory.instance.numTVs * 100 + Inventory.instance.numKills * 80);
             other.gameObject.GetComponent<PlayerMove>().canMove = false;
             Time.timeScale = 0f;
         }
