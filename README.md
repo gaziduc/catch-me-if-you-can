@@ -1,5 +1,5 @@
 # catch-me-if-you-can
-Catch me if you can is a 2D game (created with Unity) where you must go to the exit withuout being caught by enemies lights.
+Catch me if you can is a 2D game (created with Unity) where you must go to the exit without being caught by enemies lights.
 There is a solo mode with 3 levels, and a 2-player mode with 2 levels.
 
 If an enemy sees your footprint, warning mode is activated (enemies go faster).
