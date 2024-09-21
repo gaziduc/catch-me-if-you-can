@@ -8,4 +8,4 @@ If an enemy sees blood, alert mode is activated (enemies go really faster).
 This game has been created in 2 weeks, so please be nice in the comments 
 
 ## Play
-Download the game here (Windows 64 bits) : https://gamejolt.com/games/catch-me-if-you-can/588777
+Download the game here (Windows 64 bits) : https://gaziduc.itch.io/catch-me-if-you-can
